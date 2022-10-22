@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../ARTDM-171 Web Design 1/Projects/Project 3"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"ostream": "cpp",
+			"iosfwd": "cpp",
+			"iostream": "cpp",
+			"__bit_reference": "cpp",
+			"algorithm": "cpp"
+		}
+	}
+}
