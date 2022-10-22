@@ -9,10 +9,11 @@
 <ins> Evandre </ins><br />
 
 
-
 ## Features:
 
 - Not Implemented:
+    - Chat Feature
+    - Searchable list of universities
 
 <br><br>
 
