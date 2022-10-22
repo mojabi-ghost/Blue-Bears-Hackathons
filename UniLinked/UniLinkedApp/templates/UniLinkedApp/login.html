@@ -32,6 +32,8 @@
 	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url({% static 'UniLinkedApp/login/images/back.jpg' %});">
+			<form action="" method="POST">
+				{% csrf_token %}
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<span class="login100-form-logo">
@@ -48,7 +50,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -64,14 +66,23 @@
 							Login
 						</button>
 					</div>
-
+						
+					{% for message in messages%}
+						<br>
+						<p style="color:white;">{{message}}</p>
+						</br>
+					{%endfor%}
 					<div class="text-center p-t-90">
 						<a class="txt1" href="#">
 							Forgot Password?
+						</a> <br></br>
+						<a class="txt1" href="{% url 'register' %}">
+							Dont Have an Account?
 						</a>
 					</div>
 				</form>
 			</div>
+		</form>
 		</div>
 	</div>
 	
