@@ -7,3 +7,7 @@ from django.template import loader
 def login(request):
     template = loader.get_template('UnilinkedApp/index.html')
     return HttpResponse(template.render())
+
+def register(request):
+    template = loader.get_template('UnilinkedApp/register.html')
+    return HttpResponse(template.render())
