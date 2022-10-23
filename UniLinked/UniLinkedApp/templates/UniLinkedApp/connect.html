@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
+{%load static%}
 <html>
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
@@ -10,7 +9,7 @@ body {
   margin: 0 auto;
   max-width: 800px;
   padding: 0 20px;
-  
+  font-family: 'Poppins';
 }
 
 .container {
@@ -68,7 +67,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(99,99,238,1) 0%, rgba(15,91,107,1) 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(99,99,238,1) 0%, rgba(15,91,107,1) 100%);
   
 }
 li {
@@ -95,7 +94,7 @@ a:visited{
 .loginButton1 {
   
   background-color: #247BA0;
-  
+  font-family: sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -130,15 +129,15 @@ body{
 </style>
 <header>
   <nav>
-      <img src="./images/unilinklogo.png" class="navLogo">
+      <img src="{% static 'UniLinkedApp/home/images/unilinklogo.png' %}" class="navLogo">
       <div class='menu'>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Connect</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'connect' %}">Connect</a></li>
         </ul>
-      <button class="loginButton1">Login</button></div>
+      <a href="{% url 'login' %}" button class="loginButton1">Login / Log Out</a></div>
   </nav>
 </header>
 

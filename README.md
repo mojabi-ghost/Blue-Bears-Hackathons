@@ -12,12 +12,15 @@
 ## Features:
 
 - Not Implemented:
-    - Chat Feature
-    - Searchable list of universities
+    - More images, about the members
+    - More chat functionality
+    - Profile Pages
 
 <br><br>
 
 - Implemented:
+    - Chat
+    - Home and Web Pages
 
 <br><br>
 

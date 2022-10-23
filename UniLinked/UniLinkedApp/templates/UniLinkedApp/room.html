@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static%}
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,15 +75,15 @@ body{
 </style>
 <header>
   <nav>
-      <img src="./images/unilinklogo.png" class="navLogo">
+      <img src="{%static 'UniLinkedApp/home/images/unilinklogo.png' %}" class="navLogo">
       <div class='menu'>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Connect</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'connect' %}">Connect</a></li>
         </ul>
-      <button class="loginButton1">Login</button></div>
+      <a href="{% url 'login' %}" button class="loginButton1">Login / Log Out</a></div>
   </nav>
 </header>
 

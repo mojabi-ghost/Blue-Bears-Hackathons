@@ -94,8 +94,15 @@ def send(request):
     message = request.POST['message']
     username = request.POST['username']
     room_id = request.POST['room_id']
+    nuser = username
+    for a in Account.objects.all():
+        if username in a.username:
+            print('Yes')
+            nuser="{} - {} Major".format(a.username, a.major)
+            
+    print(nuser)
 
-    new_message = Message.objects.create(value=message, user=username, room=room_id)
+    new_message = Message.objects.create(value=message, user=nuser, room=room_id)
     new_message.save()
     return HttpResponse('Message sent successfully')
 
