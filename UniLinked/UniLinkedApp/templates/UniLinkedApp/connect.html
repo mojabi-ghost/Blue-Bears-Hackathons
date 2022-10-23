@@ -1,63 +1,53 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
   <head>
-    <meta charset="UTF-8">
+    <meta charsset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css"href="{% static 'connect/style.css' %}" >
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   </head>
   <body>
-    <ul id='menu'>
-    <li id = 'home'><a href='index.html'>Home</a></li>
-    <li class ='about'><a href='about.html'>About Us</a></li>
-    <li class = 'contact'><a href='about.html'>Contact</a></li>
-    <li class = 'connect'><a href='connectpage.html'>Connect</a></li>
-    <li class='login' ><a href='index.html'>Login</a></li>
+    <div class='menu'>
+      <ul id='menu'>
+      <li class ='home'><a href='index.html'>Home</a></li>
+      <li class ='about'><a href='about.html'>About Us</a></li>
+      <li class = 'contact'><a href='about.html'>Contact</a></li>
+      <li class = 'connect'><a href='connect.html'>Connect</a></li>
+      <li class='login' ><a href='index.html'>Login</a></li>
+      </ul>
+    </div>
       </div>
        </div>
-    <div class="background-image" style="background-image: url('images/imagebackground.jpeg');"></div>
-    <h1 id='title'>Connected</h1>
-    <form id='connected' action='' >
-      <fieldset>
-          <select id='dropdown' required >
-            <option value=""disabled selected>Select a university: </option>
-            <option>Student
-            </option>
-            <option>Full time job
-            </option>
-            <option>Full time learner
-            </option>
-            <option>Prefer not to say
-            </option>
-            <option>Other
-            </option>         
-          </select>
+    <div class="background-image" style="background-image: url('UniLinkedApp/static/login/images/back.jpg');"></div>
+    <div id='body'>
+      <h1 id='title'>Connected</h1>
+      <form id='connected' action='' >
+        <fieldset>
             <select id='dropdown' required >
-              <option value=""disabled selected>Select a major</option>
-              <option>Student
-              </option>
-              <option>Full time job
-              </option>
-              <option>Full time learner
-              </option>
-              <option>Prefer not to say
-              </option>
-              <option>Other
+              <option value=""disabled selected>Select a university: </option>
+              <option>
               </option>         
             </select>
-    <div class='inline'>
-        <h1 id="sayhi" >Say Hi!</h1>
-      <div class="chatbox">
-        <label class="messages ">{{messages.username}} : {{messages.comments}}</label>
-        <textarea id='comments'placeholder="type something here . . ."></textarea>
+              <select id='dropdown' required >
+                <option value=""disabled selected>Select a major</option>
+                <option>
+                </option>         
+              </select>
+      <div class='inline'>
+          <h1 id="sayhi" >Say Hi!</h1>
+        <div class="chatbox">
+          <label class="messages ">{{messages.username}} : {{messages.comments}}</label>
+          <textarea id='comments'rows='1'placeholder="type something here . . ."></textarea>
+        </div>      
       </div>
-    </div>
-    
-
-    </p>  
-  
-      </fieldset>
+    </p> 
+    </fieldset>
     </form>
-    </ul>
+    </div>
+
+      
   </body>
 </html>

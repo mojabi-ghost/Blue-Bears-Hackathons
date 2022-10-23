@@ -4,7 +4,7 @@ from django.template import loader
 from django.contrib.auth.models import User
 from django.contrib import messages
 from . models import Account, Register
-from . forms import RegisterForm
+from . forms import AccountAuthenticationForm, RegisterForm
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from . auth import MyAuthBackEnd
 
@@ -13,16 +13,16 @@ from . auth import MyAuthBackEnd
 def loginPage(request):
     
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        
-        user = authenticate(username=username, password = password)
-        #print(user)
-        #print(username, password)
-        if user is not None:
-            print('Test')
-            login(request, user)
-            return redirect('home')
+        form = AccountAuthenticationForm(request.POST)
+        print(form)
+        if form.is_valid():
+            print('here')
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)
+                return redirect('home')
         
         else:
             print('Not work')
@@ -41,9 +41,8 @@ def register(request):
         university = request.POST['university']
         major = request.POST['major']
         
-        myuser = User.objects.create_user(username, email, password)
-        myuser.university = university
-        myuser.major = major
+        myuser = Account.objects.create_user(username, email, password, university, major)
+
         myuser.save()
         return redirect('login')
         

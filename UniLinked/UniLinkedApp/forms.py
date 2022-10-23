@@ -12,16 +12,16 @@ class RegisterForm(forms.ModelForm):
         
 class AccountAuthenticationForm(forms.ModelForm):
 
-	password = forms.CharField(label='Password', widget=forms.PasswordInput)
+	#password = forms.CharField(label='Password', widget=forms.PasswordInput)
 
 	class Meta:
 		model = Account
-		fields = ('username', 'email','password', 'university', 'major')
+		fields = ['username', 'password']
 
 	def clean(self):
 		if self.is_valid():
-			email = self.cleaned_data['email']
+			username = self.cleaned_data['username']
 			password = self.cleaned_data['password']
-			if not authenticate(email=email, password=password):
+			if not authenticate(username=username, password=password):
 				raise forms.ValidationError("Invalid login")
 
