@@ -1,12 +1,12 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template import loader
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.contrib import messages
-from . models import Register
+from . models import Account, Register
 from . forms import RegisterForm
-from django.contrib.auth import authenticate, login, logout
-
+from django.contrib.auth import authenticate, login, logout, get_user_model
+from . auth import MyAuthBackEnd
 
 
 # Create your views here.
@@ -16,13 +16,16 @@ def loginPage(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         
-        user = authenticate(request, username=username, password = password)
-        print(user)
+        user = authenticate(username=username, password = password)
+        #print(user)
+        #print(username, password)
         if user is not None:
-            login(request, username)
+            print('Test')
+            login(request, user)
             return redirect('home')
         
         else:
+            print('Not work')
             messages.info(request, 'Username or Password is incorrect')
         
     context = {}
@@ -31,17 +34,21 @@ def loginPage(request):
 def register(request):
     if request.method == 'POST':
         
-        form = RegisterForm(request.POST)
-        # print(request.POST)
-        #print(form)
-        if form.is_valid():
-            # print('VALIDS')
-            form.save()
-            return HttpResponseRedirect(redirect_to=('/login/'))
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        confirm = request.POST['confirm']
+        university = request.POST['university']
+        major = request.POST['major']
         
-    else:
-        form = RegisterForm()
-    return render(request, 'UniLinkedApp/register.html', {'form': form})
+        myuser = User.objects.create_user(username, email, password)
+        myuser.university = university
+        myuser.major = major
+        myuser.save()
+        return redirect('login')
+        
+
+    return render(request, 'UniLinkedApp/register.html')
 
 def home(request):
     return render(request, 'UniLinkedApp/connect.html')
