@@ -6,7 +6,6 @@ class Register(models.Model):
     username = models.CharField(max_length = 200)
     email = models.EmailField(max_length = 200)
     password = models.CharField(max_length = 200)
-    confirm = models.CharField(max_length = 200)
     university = models.CharField(max_length=50)
     major = models.CharField(max_length = 200)
     
@@ -14,28 +13,23 @@ class Register(models.Model):
         return self.user
     
 class MyAccountManager(BaseUserManager):
-	def create_user(self, username, email, password, university, major):
-		if not email:
-			raise ValueError("Users must have an email address")
+	def create_user(self, username, password=None, **extra_fields):
 		if not username:
 			raise ValueError("Users must have an username")
 
 		user  = self.model(
                 username=username,
-				email=self.normalize_email(email),
                 password = password,
-                university = university,
-                major = major,
+                **extra_fields
 			)
 
 		user.set_password(password)
 		user.save(using=self._db)
 		return user
 
-	def create_superuser(self, email, username, password):
+	def create_superuser(self, username, password):
 		user  = self.create_user(
                 username=username,
-				email=self.normalize_email(email),
 				password=password,
 			)
 		user.is_admin = True
@@ -71,7 +65,4 @@ class Account(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return True
-
-
-
 

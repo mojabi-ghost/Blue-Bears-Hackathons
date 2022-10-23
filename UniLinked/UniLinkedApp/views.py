@@ -13,16 +13,15 @@ from . auth import MyAuthBackEnd
 def loginPage(request):
     
     if request.method == 'POST':
-        form = AccountAuthenticationForm(request.POST)
-        print(form)
-        if form.is_valid():
-            print('here')
-            username = request.POST['username']
-            password = request.POST['password']
-            user = authenticate(username=username, password=password)
-            if user:
-                login(request, user)
-                return redirect('home')
+        # form = AccountAuthenticationForm(request.POST)
+
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        print(username, password)
+        if user:
+            login(request, user)
+            return redirect('home')
         
         else:
             print('Not work')
@@ -37,12 +36,13 @@ def register(request):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        confirm = request.POST['confirm']
         university = request.POST['university']
         major = request.POST['major']
         
-        myuser = Account.objects.create_user(username, email, password, university, major)
-
+        myuser = Account.objects.create_user(username, password)
+        myuser.email = email
+        myuser.university = university
+        myuser.major = major
         myuser.save()
         return redirect('login')
         
