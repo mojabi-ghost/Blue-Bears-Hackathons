@@ -34,7 +34,7 @@
 		<div class="container-login100" style="background-image: url({% static 'UniLinkedApp/login/images/back.jpg' %});">
 			<form action="" method="POST">
 				{% csrf_token %}
-				{{form.as_p}}
+				
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<span class="login100-form-logo">
@@ -55,12 +55,6 @@
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
-					<div class="contact100-form-checkbox">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						<label class="label-checkbox100" for="ckb1">
-							Remember me
-						</label>
-					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">

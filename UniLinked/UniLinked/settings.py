@@ -134,3 +134,5 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'UniLinkedApp.auth.MyAuthBackEnd',
 )
+
+AUTH_USER_MODEL = 'UniLinkedApp.Account'
