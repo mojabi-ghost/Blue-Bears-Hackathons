@@ -1,0 +1,54 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+li {
+  padding-left: 2em;
+  font-size: 15px;
+  display: inline-block;
+  list-style: none;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:visited{
+  color: #fff;
+}
+
+
+.loginButton1 {
+  
+  background-color: #247BA0;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 106.5%;
+  padding: 1em 3em 1em 3em;
+  border-style: none;
+  margin-left: 5em;
+}
+
+.navLogo {
+width: 10%;
+height: 10%;
+position: relative;
+left: -20%;
+}
+
+.menu{
+position: relative;
+right: -20%;
+display: flex;
+}
+
+body{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(156,156,224,1) 0%, rgba(27,148,173,1) 100%);;
+}
