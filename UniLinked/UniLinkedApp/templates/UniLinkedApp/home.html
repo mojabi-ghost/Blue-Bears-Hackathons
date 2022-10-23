@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{%static 'UniLinkedApp/home/css/style.css' %}" rel="stylesheet" type="text/css">
+    <title>UniLinked Main Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav>
+        <img src="{% static 'UniLinkedApp/home/images/unilinklogo.png' %}" class="navLogo">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'connect' %}">Connect</a></li>
+        </ul>
+        <a href="{% url 'login' %}" button class="loginButton1">Login</a>
+    </nav>
+    </header>   
+
+    <div class="heroLogoMobile">
+        <img src="{% static 'UniLinkedApp/home/images/unilinklogo.png' %}">
+    </div>
+    
+    <div class="textButtonWrapper">
+    <div class="textWrapper">
+    <h3>Welcome to UniLinked</h3>
+    <h1>Best Way to Connect and Socialize</h1>
+    <p>You can connect with people who have the same majors from different
+        universities.
+    </p>
+    </div>
+    
+    <div class="buttonWrapper">
+        <a href="{% url 'login' %}" button class="loginButton2">Login</a>
+        <a href="{% url 'register' %}" button class="registerButton">Register</button></a>
+    </div>
+    </div>
+
+    <div class="heroLogoDT">
+        <img src="{% static 'UniLinkedApp/home/images/unilinklogo.png' %}">
+    </div>
+</body>
+</html>
+{%endblock%}

@@ -31,14 +31,14 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url({% static 'UniLinkedApp/login/images/back.jpg' %});">
+		<div class="container-login100" style="background-image: url({% static 'UniLinkedApp/home/images/imagebackground.jpeg' %});">
 			<form action="" method="POST">
 				{% csrf_token %}
 				
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
+						<img src="{% static 'UniLinkedApp/home/images/unilinklogo.png' %}" style="width:350px;height:250px;">
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">

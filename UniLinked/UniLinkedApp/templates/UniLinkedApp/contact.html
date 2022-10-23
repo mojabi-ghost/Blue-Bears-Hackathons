@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang ='en'>
+  {% load static %}
+  {% block content %}
+  {% load crispy_forms_tags %}
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <title> Contact Page </title>
+    <link rel='stylesheet' href="{% static 'UniLinkedApp/contact/style.css' %}">
+
+  </head>
+
+  <body>
+
+   <header>
+    <nav>
+        <img src="{% static 'UniLinkedApp/home/images/unilinklogo.png'%}" class="navLogo" >
+       <div class = 'menu'> <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'connect' %}">Connect</a></li>
+        </ul>
+        <button class="loginButton1">Login</button></div>
+    </nav>
+    </header>
+
+    <div class='inline>'
+      <img src="{% static 'UniLinkedApp/home/image/bear1.png' %}" alt="Blue Bear Logo">
+      <div class='description'><h1> Contact US </h1>
+        <div class='text'><h2>Phone : +1 123-456-7890</h2><h2>Email : webluebears@hackathon.com</h2>
+          <h2>Location:<a href='https://www.google.com/maps/place/Diablo+Valley+College/@37.9686774,-122.0711537,17z/data=!3m1!4b1!4m5!3m4!1s0x808566bb6617a201:0xe403ae1112bd367c!8m2!3d37.9686774!4d-122.0711537'> Diablo Valley College</a></h2>
+      </div>
+
+    </div>
+    
+    
+
+
+  </body>
+
+</html>
+{%endblock%}
