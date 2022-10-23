@@ -9,8 +9,12 @@ class MyAuthBackEnd(ModelBackend):
         username = kwargs['username']
         password = kwargs['password']
         
+        account = Account.objects.get(username = username)
+        
         try:
-            account = Account.objects.get(email=username)
+            account = Account.objects.get(username = username)
+            p = Account.objects.get(password = password)
+            print(p)
             if account.check_password(password) is True:
                 return account
         except Account.DoesNotExist:
