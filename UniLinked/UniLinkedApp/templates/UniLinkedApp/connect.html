@@ -1,53 +1,111 @@
-
 <!DOCTYPE html>
-{% load static %}
-<html lang="en">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
 
-  <head>
-    <meta charsset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css"href="{% static 'connect/style.css' %}" >
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  </head>
-  <body>
-    <div class='menu'>
-      <ul id='menu'>
-      <li class ='home'><a href='index.html'>Home</a></li>
-      <li class ='about'><a href='about.html'>About Us</a></li>
-      <li class = 'contact'><a href='about.html'>Contact</a></li>
-      <li class = 'connect'><a href='connect.html'>Connect</a></li>
-      <li class='login' ><a href='login.html'>Login</a></li>
-      </ul>
-    </div>
-      </div>
-       </div>
-    <div class="background-image" style="background-image: url('UniLinkedApp/static/login/images/back.jpg');"></div>
-    <div id='body'>
-      <h1 id='title'>Connected</h1>
-      <form id='connected' action='' >
-        <fieldset>
-            <select id='dropdown' required >
-              <option value=""disabled selected>Select a university: </option>
-              <option>
-              </option>         
-            </select>
-              <select id='dropdown' required >
-                <option value=""disabled selected>Select a major</option>
-                <option>
-                </option>         
-              </select>
-      <div class='inline'>
-          <h1 id="sayhi" >Say Hi!</h1>
-        <div class="chatbox">
-          <label class="messages ">{{messages.username}} : {{messages.comments}}</label>
-          <textarea id='comments'rows='1'placeholder="type something here . . ."></textarea>
-        </div>      
-      </div>
-    </p> 
-    </fieldset>
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<div align="center">
+    <h2>Chat</h2>
+</div>
+
+
+<div class="container">
+    <style>
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    }
+    </style>
+
+    <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <label>University Name</label>
+        <input readonly type="text" name="room_name" id="room_name" width="100px" value={{user.university}} />
+        <label>Name</label>
+        <input readonly type="text" name="username" id="username" width="100px" value={{user.username}} />
+        <input type="submit" value="Enter Room">
     </form>
-    </div>
+</div>
 
-      
-  </body>
+
+</body>
+
+
 </html>

@@ -1,0 +1,169 @@
+body { 
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(156,156,224,1) 0%, rgba(27,148,173,1) 100%);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+li {
+    padding-left: 2em;
+    display: inline-block;
+    list-style: none;
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+a:visited{
+    color: #fff;
+}
+.navLogo {
+    width: 25%;
+}
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h3 {
+    font-family: 'Jost';
+    color: #C3B299;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 94.5%;
+    color: #fff;
+}
+p {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-weight: 100;
+}
+
+.loginButton1 {
+    background-color: #247BA0;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 106.5%;
+    padding: 1em 3em 1em 3em;
+    border-style: none;
+}
+.loginButton2 {
+    background-color: #247BA0;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 106.5%;
+    padding: 1em 3em 1em 3em;
+    border-style: none;
+}
+
+.registerButton {
+    margin-left: 4em;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 106.5%;
+    padding: 1em 3em 1em 3em;
+    /*
+    border: 1px;
+    border-style: solid;
+    border-color: #fff;
+    opacity: 0;
+    color: #fff;
+    */
+}
+
+.heroLogoDT {
+    display: none;
+}
+
+
+
+@media (min-width: 720px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    header {
+        grid-column: span 2;
+    }
+    .navLogo {
+        width: 15%;
+        margin-right: 15em;
+    }
+    nav {
+        grid-column: span 2;
+    }
+    .textWrapper {
+        grid-column: span 2;
+        padding-top: 1em;
+    }
+    .mainTextSection {
+        grid-column: span 2;
+        padding: 3em;
+    }
+    .homeText1 {
+        padding: 3em;
+    }
+    .homeText2 {
+        padding: 3em;
+    }
+    footer {
+        grid-column: span 2;
+    }
+    .heroLogoMobile {
+        display: none;
+    }
+    .heroLogoDT {
+        display: flex;
+        width: 150vh;
+        margin-left: 15em;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    header {
+        grid-column: span 2;
+    }
+    nav {
+        grid-column: span 2;
+    }
+    .navLogo {
+        width: 10%;
+        position: relative;
+        left: -20%;
+    }
+    .loginButton1 {
+        margin-left: 5em;
+    }
+    .mainTextSection {
+        padding-left: 10em;
+        grid-column: span 2;
+        padding: 3em;
+    }
+    .textButtonWrapper {
+        width: 500px; 
+        padding-left: 10em;
+    }
+
+}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang ='en'>
+  {% load static %}
+  {% block content %}
+  {% load crispy_forms_tags %}
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <title> About Page </title>
+    <link rel='stylesheet' href="{%static 'UniLinkedApp/about/main.css' %}">
+    
+  </head>
+
+  <body>
+    
+   <header>
+    <nav>
+        <img src="{% static 'UniLinkedApp/home/images/unilinklogo.png' %}" style="height:10%; width:10%">
+       <div class = 'menu'> <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'connect' %}">Connect</a></li>
+        </ul>
+        <button class="loginButton1">Login</button></div>
+    </nav>
+    </header>   
+    
+     <div class="background-image" style="background-image: url({% static 'UniLinkedApp/home/images/imagebackground.jpeg' %});"></div>
+    <div class = 'inline'>
+    <img src="{% static 'UnilinkedApp/home/images/bear1.png' %}" alt="Blue Bear Logo">
+    
+    <div class='description'><h1> ABOUT US </h1>
+      <div class='text'><h2> DVC HACKATHON TEAM </h2>
+      <p>We are a group of four students coming from Diablo Valley College, located in Pleasant Hill, California. Through the path of Global Connectivity, we created a website that focuses on linking students of the same majors with their peers around the world. </p></div>
+    </div>
+
+  </body>
+  
+</html>
+{%endblock%}
