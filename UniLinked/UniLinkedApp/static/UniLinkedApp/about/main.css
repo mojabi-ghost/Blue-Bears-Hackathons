@@ -1,0 +1,113 @@
+.inline{
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  img{
+    width: 50%;
+    height: 50%;
+  }
+  
+  .description{
+    margin-left: 100px;
+    text-align: center;
+  }
+  
+  
+  body{
+    background: rgb(24,80,103);
+  background: linear-gradient(180deg, rgba(24,80,103,1) 0%, rgba(110,175,196,1) 64%, rgba(191,211,217,1) 84%);
+    font-family: 'Poppins';
+    border:0;
+    font-size: 150%;
+    font-weight: bolder;
+       
+  }
+  
+  ul#menu{
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    position: fixed;
+    width: 100%;
+    margin-left: 30%;
+    font-size: 50%;
+  
+  
+    top:0;}
+  
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 18px;
+    text-decoration: none;
+    font-size: 20px;
+  
+  }
+  
+  .text{
+    font-weight: normal;
+    color: white;
+  }
+  
+  h1{
+    color:#C3B299
+  }
+  
+  nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+  li {
+      padding-left: 2em;
+      display: inline-block;
+      list-style: none;
+      color: #fff;
+      font-size: 15px;
+  }
+  a {
+      text-decoration: none;
+      color: #fff;
+  }
+  a:visited{
+      color: #fff;
+  }
+  
+  .loginButton1 {
+  
+      background-color: #247BA0;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 106.5%;
+      padding: 1em 3em 1em 3em;
+      border-style: none;
+      margin-left: 5em;
+  }
+  
+  .navLogo {
+    width: 10%;
+    height: 10%;
+    position: relative;
+    left: -15%;
+  }
+  
+  .menu{
+    position: relative;
+    right: -15%;
+    display: flex;
+  }
+  
+  
+  
+  
