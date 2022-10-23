@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang='en'>
-{% load static%}
-<head>
-<link rel"stylesheet" href="({%static 'connect/style.css' %})">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+  <head>
+  <link rel"stylesheet" href="({%static 'connect/style.css' %})">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
 
-</head>
-<body>
-<header>
-  <nav>
-      <img src="./images/unilinklogo.png" class="navLogo">
-      <div class='menu'>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Connect</a></li>
-        </ul>
-      <button class="loginButton1">Login</button></div>
-  </nav>
-</header>
+  </head>
+  <body>
+  <header>
+    <nav>
+        <img src="./images/unilinklogo.png" class="navLogo">
+        <div class='menu'>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Connect</a></li>
+          </ul>
+        <button class="loginButton1">Login</button></div>
+    </nav>
+  </header>
 
-<div align="center">
-    <h2>Chat</h2>
-</div>
-
-
-<div class="container">
-    <form id="post-form" method="POST" action="checkview">
-        {% csrf_token %}
-        <label>University Name</label>
-        <input readonly type="text" name="room_name" id="room_name" width="100px" value={{user.university}} />
-        <label>Name</label>
-        <input readonly type="text" name="username" id="username" width="100px" value={{user.username}} />
-        <input type="submit" value="Enter Room">
-    </form>
-</div>
+  <div align="center">
+      <h2>Chat</h2>
+  </div>
 
 
+  <div class="container">
+      <form id="post-form" method="POST" action="checkview">
+          {% csrf_token %}
+          <label>University Name</label>
+          <input readonly type="text" name="room_name" id="room_name" width="100px" value={{user.university}} />
+          <label>Name</label>
+          <input readonly type="text" name="username" id="username" width="100px" value={{user.username}} />
+          <input type="submit" value="Enter Room">
+      </form>
+  </div>
 
-</body>
+
+
+  </body>
 
 
 </html>
